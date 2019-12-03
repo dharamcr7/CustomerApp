@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText usernameEditTxt,passwordEditTxt;
     Button loginBtn;
-    int customerId = 1;
-
+    int customerId = -1;
+    //String firstName = usernameEditTxt.getText().toString()
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +33,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 for (int i = 0; i < userList.length; i++) {
-                    String firstName = usernameEditTxt.getText().toString();
+
 
                     if (usernameEditTxt.getText().toString().equalsIgnoreCase(userList[i])) {
                         if (passwordEditTxt.getText().toString().equalsIgnoreCase(passwordList[i])) {
                             Toast.makeText(MainActivity.this,
                                     "Login Succesfully", Toast.LENGTH_LONG).show();
-                            customerId = userList[i].indexOf(usernameEditTxt.getText().toString());
-                            String cust = String.valueOf(customerId);
+
+                            int indexOfFlower = Arrays.asList(userList).indexOf(usernameEditTxt.getText().toString()) + 1;
+                            String tmpStr10 = String.valueOf(indexOfFlower);
+
                             Toast.makeText(MainActivity.this,
-                                    cust, Toast.LENGTH_LONG).show();
+                                    tmpStr10, Toast.LENGTH_LONG).show();
+
                             Intent intent = new Intent(MainActivity.this, ProductActivity.class);
                             intent.putExtra("username",usernameEditTxt.getText().toString());
-                            intent.putExtra("customerId",cust);
+                           intent.putExtra("customerId",tmpStr10);
                             startActivity(intent);
                         } else {
                             Toast.makeText(MainActivity.this,

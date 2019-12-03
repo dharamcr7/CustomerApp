@@ -24,7 +24,9 @@
             android:id="@+id/productImage"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:background="@drawable/ic_launcher_background"
+            android:scaleType="fitXY"
+
+            android:background="@drawable/car"
             ></ImageView>
 
         <Spinner
@@ -49,7 +51,7 @@
             android:id="@+id/priceTxtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="5"
+            android:text="5"
             android:textSize="25dp"></TextView>
     </LinearLayout>
     <LinearLayout
@@ -67,7 +69,7 @@
             android:id="@+id/quantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="5"></EditText>
+            android:text="1"></EditText>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,7 +86,7 @@
             android:id="@+id/totalValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="5"
+            android:hint="50"
             android:textSize="25dp"></TextView>
     </LinearLayout>
 
